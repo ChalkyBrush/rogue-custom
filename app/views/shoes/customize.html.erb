@@ -1,0 +1,188 @@
+<%= form_for [@shoe] do |f| %>
+
+  <% if @shoe.errors.any? %>
+    <div class = "error_messages">
+    <h3>Unable to create shoe:</h3>
+    <ul>
+
+      <% for message in @shoe.errors.full_messages %>
+              <div class="alert alert-error">   
+              <strong>Error! </strong><%=message%>  
+              </div>  
+      <% end %>
+    </ul>
+  <% end %>
+  <div class="parts-select" style="width:60%;background-color:#cccccc;border-radius:8px;height:40px;margin-left:10%;margin-top:20px;position:relative">
+  <div class="selector" id="select1" style="left:160px;"></div>
+  <div class="selector" id="select2" style="left:220px"></div>
+  <div class="selector" id="select3" style="left:280px"></div>
+  <div class="selector" id="select4" style="left:340px"></div>
+  <div class="selector" id="select5" style="left:400px"></div>
+  </div>
+  <br>
+  <div class="shoe-preview" style="width:40%;display:inline-block;margin-left:20%;height:400px">
+  <img src="/assets/shoe/b0.png" class="part" id="part1" style="height:400px;margin-top:50px;position:absolute">
+  <img src="/assets/shoe/c0.png" class="part" id="part2" style="height:400px;margin-top:50px;position:absolute">
+  <img src="/assets/shoe/d0.png" class="part" id="part3" style="height:400px;margin-top:50px;position:absolute">
+  <img src="/assets/shoe/e0.png" class="part" id="part4" style="height:400px;margin-top:50px;position:absolute">
+  <img src="/assets/shoe/f0.png" class="part" id="part5" style="height:400px;margin-top:50px;position:absolute">
+  </div>
+  <div class="customize-elements" style="width:25%;display:inline-block;background-color:#cccccc;height:300px;border-radius:8px;position:relative;">
+  <div class="customize-title" style="position:absolute;left:20px;top:20px">Color Select</div>
+  <div class="color-selector" id="red" style="left:40px;top:60px;background-color:#FF0000"></div>
+  <div class="color-selector" id="blue" style="left:100px;top:60px;background-color:#0033CC"></div>
+  <div class="color-selector" id="green" style="left:160px;top:60px;background-color:#009933"></div>
+  </div>
+ 
+  <div class="panel panel-success custom_create" id="new_submit" style="margin-left:1%;vertical-align:top;">
+
+   <center> <div class="action">
+    <%= button_tag(type: "submit", class: "btn btn-success create") do %>
+    <i class="icon-leaf"></i> Create Shoe
+    <% end %>
+  </div></center></div>
+ <%end%>
+<script>
+var stcolor = "#45faa2"
+var selectcolor = "#435d23"
+$(".customize-elements").hide();
+// $(document).ready(function (){
+// var part1 = new Image()
+// part1.id = "part1";
+// var part2 = new Image()
+// part2.id = "part2";
+// var part3 = new Image()
+// part3.id = "part3";
+// var part4 = new Image()
+// part4.id = "part4";
+// var part5 = new Image()
+// part5.id = "part5";
+// });
+ // $(document).ready(function (){
+var selection = 0;
+$(document).delegate('#select1', 'mouseover', function() {
+   $('#part1').animate({opacity:"0.5"}, 200);
+   $(this).animate({width:"50px",height:"50px",left:"155px",top:"-5px"}, 200);
+});
+$(document).delegate('#select1', 'mouseout', function() {
+   $('#part1').animate({opacity:"1"}, 200);
+   $(this).animate({width:"40px",height:"40px",left:"160px",top:"0px"}, 200);
+});
+
+$(document).delegate('#select2', 'mouseover', function() {
+   $('#part2').animate({opacity:"0.5"}, 200);
+   $(this).animate({width:"50px",height:"50px",left:"215px",top:"-5px"}, 200);
+});
+$(document).delegate('#select2', 'mouseout', function() {
+   $('#part2').animate({opacity:"1"}, 200);
+   $(this).animate({width:"40px",height:"40px",left:"220px",top:"0px"}, 200);
+});
+
+$(document).delegate('#select3', 'mouseover', function() {
+   $('#part3').animate({opacity:"0.5"}, 200);
+   $(this).animate({width:"50px",height:"50px",left:"275px",top:"-5px"}, 200);
+});
+$(document).delegate('#select3', 'mouseout', function() {
+   $('#part3').animate({opacity:"1"}, 200);
+   $(this).animate({width:"40px",height:"40px",left:"280px",top:"0px"}, 200);
+});
+
+$(document).delegate('#select4', 'mouseover', function() {
+   $('#part4').animate({opacity:"0.5"}, 200);
+   $(this).animate({width:"50px",height:"50px",left:"335px",top:"-5px"}, 200);
+});
+$(document).delegate('#select4', 'mouseout', function() {
+   $('#part4').animate({opacity:"1"}, 200);
+   $(this).animate({width:"40px",height:"40px",left:"340px",top:"0px"}, 200);
+});
+
+$(document).delegate('#select5', 'mouseover', function() {
+   $('#part5').animate({opacity:"0.5"}, 200);
+   $(this).animate({width:"50px",height:"50px",left:"395px",top:"-5px"}, 200);
+});
+$(document).delegate('#select5', 'mouseout', function() {
+   $('#part5').animate({opacity:"1"}, 200);
+   $(this).animate({width:"40px",height:"40px",left:"400px",top:"0px"}, 200);
+});
+
+$(document).delegate('#red', 'mouseover', function() {
+   $('#part'+selection).animate({opacity:"0.5"}, 200);
+   $(this).animate({width:"50px",height:"50px",left:"35px",top:"55px"}, 200);
+
+});
+$(document).delegate('#red', 'mouseout', function() {
+   $('#part'+selection).animate({opacity:"1"}, 200);
+   $(this).animate({width:"40px",height:"40px",left:"40px",top:"60px"}, 200);
+});
+
+$("#red").click(function() {
+    var img = new Image();
+   img = $("#part"+selection).first();
+     img.onload = function() {
+    Pixastic.process(img, "coloradjust", {red:1,green:0,blue:0});
+    }
+document.body.appendChild(img);
+img.src = "myimage.jpg";
+});
+
+$( "#select1" ).click(function() {
+  selection = 1;
+  $(".customize-elements").hide();
+  $(this).animate({backgroundColor:selectcolor}, 200);
+  $(".customize-elements").fadeIn();
+  $(".customize-title").html("Customize Color - Heel")
+  $( "#select2" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select3" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select4" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select5" ).animate({backgroundColor:stcolor}, 200);
+});
+
+$( "#select2" ).click(function() {
+  selection = 2;
+  $(".customize-elements").hide();
+  $(".customize-elements").fadeIn();
+  $(".customize-title").html("Customize Color - Main")
+  $(this).animate({backgroundColor:selectcolor}, 200);
+  $( "#select1" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select3" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select4" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select5" ).animate({backgroundColor:stcolor}, 200);
+});
+
+$( "#select3" ).click(function() {
+  selection = 3;
+  $(".customize-elements").hide();
+  $(".customize-elements").fadeIn();
+  $(".customize-title").html("Customize Color - Front")
+  $(this).animate({backgroundColor:selectcolor}, 200);
+  $( "#select1" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select2" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select4" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select5" ).animate({backgroundColor:stcolor}, 200);
+});
+
+$( "#select4" ).click(function() {
+  selection = 4;
+  $(".customize-elements").hide();
+  $(".customize-elements").fadeIn();
+  $(".customize-title").html("Customize Color - Toe")
+  $(this).animate({backgroundColor:selectcolor}, 200);
+  $( "#select1" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select2" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select3" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select5" ).animate({backgroundColor:stcolor}, 200);
+});
+
+$( "#select5" ).click(function() {
+  selection = 5;
+  $(".customize-elements").hide();
+  $(".customize-elements").fadeIn();
+  $(".customize-title").html("Customize Color - Sole")
+  $(this).animate({backgroundColor:selectcolor}, 200);
+  $( "#select1" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select2" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select3" ).animate({backgroundColor:stcolor}, 200);
+  $( "#select4" ).animate({backgroundColor:stcolor}, 200);
+});
+
+</script>
