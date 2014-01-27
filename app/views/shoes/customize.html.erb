@@ -12,7 +12,7 @@
       <% end %>
     </ul>
   <% end %>
-  <div class="parts-select" style="width:60%;background-color:#cccccc;border-radius:8px;height:40px;margin-left:10%;margin-top:20px;position:relative">
+  <div class="parts-select" style="width:60%;background-color:#444444;border-radius:8px;height:40px;margin-left:10%;margin-top:20px;position:relative">
   <div class="selector" id="select1" style="left:160px;"></div>
   <div class="selector" id="select2" style="left:220px"></div>
   <div class="selector" id="select3" style="left:280px"></div>
@@ -28,8 +28,8 @@
   <img src="/assets/shoe/e0.png" class="part" id="part4" style="height:400px;margin-top:50px;position:absolute">
   <img src="/assets/shoe/f0.png" class="part" id="part5" style="height:400px;margin-top:50px;position:absolute">
   </div>
-  <div class="customize-elements" style="width:25%;display:inline-block;background-color:#cccccc;height:300px;border-radius:8px;position:relative;">
-  <div class="customize-title" style="position:absolute;left:20px;top:20px">Color Select</div>
+  <div class="customize-elements" style="width:25%;display:inline-block;background-color:#dddddd;height:300px;border-radius:8px;position:relative;color:#111111">
+  <div class="customize-title" style="position:absolute;left:20px;top:20px">Customize Color</div>
   <div class="color-selector" id="red" style="left:40px;top:60px;background-color:#FF0000"></div>
   <div class="color-selector" id="blue" style="left:100px;top:60px;background-color:#0033CC"></div>
   <div class="color-selector" id="green" style="left:160px;top:60px;background-color:#009933"></div>
@@ -44,8 +44,8 @@
   </div></center></div>
  <%end%>
 <script>
-var stcolor = "#45faa2"
-var selectcolor = "#435d23"
+var stcolor = "#468847"
+var selectcolor = "#3a87ad"
 $(".customize-elements").hide();
 // $(document).ready(function (){
 // var part1 = new Image()
@@ -128,62 +128,73 @@ img.src = "myimage.jpg";
 
 $( "#select1" ).click(function() {
   selection = 1;
-  $(".customize-elements").hide();
-  $(this).animate({backgroundColor:selectcolor}, 200);
-  $(".customize-elements").fadeIn();
-  $(".customize-title").html("Customize Color - Heel")
-  $( "#select2" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select3" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select4" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select5" ).animate({backgroundColor:stcolor}, 200);
+  $(this).css({backgroundColor:selectcolor}, 200);
+  $(".customize-elements").fadeOut(800);
+  setTimeout(function() {
+        $(".customize-title").html("Customize Color - Heel");
+}, 700);
+  $(".customize-elements").delay(200).fadeIn(1000);
+
+  $( "#select2" ).css({backgroundColor:stcolor}, 200);
+  $( "#select3" ).css({backgroundColor:stcolor}, 200);
+  $( "#select4" ).css({backgroundColor:stcolor}, 200);
+  $( "#select5" ).css({backgroundColor:stcolor}, 200);
 });
 
 $( "#select2" ).click(function() {
   selection = 2;
-  $(".customize-elements").hide();
-  $(".customize-elements").fadeIn();
-  $(".customize-title").html("Customize Color - Main")
-  $(this).animate({backgroundColor:selectcolor}, 200);
-  $( "#select1" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select3" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select4" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select5" ).animate({backgroundColor:stcolor}, 200);
+  $(".customize-elements").fadeOut(800);
+  $(".customize-elements").delay(200).fadeIn(1000);
+  setTimeout(function() {
+        $(".customize-title").html("Customize Color - Main");
+}, 700);
+  $(this).css({backgroundColor:selectcolor}, 200);
+  $( "#select1" ).css({backgroundColor:stcolor}, 200);
+  $( "#select3" ).css({backgroundColor:stcolor}, 200);
+  $( "#select4" ).css({backgroundColor:stcolor}, 200);
+  $( "#select5" ).css({backgroundColor:stcolor}, 200);
 });
 
 $( "#select3" ).click(function() {
   selection = 3;
-  $(".customize-elements").hide();
-  $(".customize-elements").fadeIn();
-  $(".customize-title").html("Customize Color - Front")
-  $(this).animate({backgroundColor:selectcolor}, 200);
-  $( "#select1" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select2" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select4" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select5" ).animate({backgroundColor:stcolor}, 200);
+  $(".customize-elements").fadeOut(800);
+  $(".customize-elements").delay(200).fadeIn(1000);
+  setTimeout(function() {
+        $(".customize-title").html("Customize Color - Front");
+}, 700);
+  $(this).css({backgroundColor:selectcolor}, 200);
+  $( "#select1" ).css({backgroundColor:stcolor}, 200);
+  $( "#select2" ).css({backgroundColor:stcolor}, 200);
+  $( "#select4" ).css({backgroundColor:stcolor}, 200);
+  $( "#select5" ).css({backgroundColor:stcolor}, 200);
 });
 
 $( "#select4" ).click(function() {
   selection = 4;
-  $(".customize-elements").hide();
-  $(".customize-elements").fadeIn();
-  $(".customize-title").html("Customize Color - Toe")
-  $(this).animate({backgroundColor:selectcolor}, 200);
-  $( "#select1" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select2" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select3" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select5" ).animate({backgroundColor:stcolor}, 200);
+  $(".customize-elements").fadeOut(800);
+  $(".customize-elements").delay(200).fadeIn(1000);
+  setTimeout(function() {
+        $(".customize-title").html("Customize Color - Toe");
+}, 700);
+  $(this).css({backgroundColor:selectcolor}, 200);
+  $( "#select1" ).css({backgroundColor:stcolor}, 200);
+  $( "#select2" ).css({backgroundColor:stcolor}, 200);
+  $( "#select3" ).css({backgroundColor:stcolor}, 200);
+  $( "#select5" ).css({backgroundColor:stcolor}, 200);
 });
 
 $( "#select5" ).click(function() {
   selection = 5;
-  $(".customize-elements").hide();
-  $(".customize-elements").fadeIn();
-  $(".customize-title").html("Customize Color - Sole")
-  $(this).animate({backgroundColor:selectcolor}, 200);
-  $( "#select1" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select2" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select3" ).animate({backgroundColor:stcolor}, 200);
-  $( "#select4" ).animate({backgroundColor:stcolor}, 200);
+  $(".customize-elements").fadeOut(800);
+  $(".customize-elements").delay(200).fadeIn(1000);
+  setTimeout(function() {
+        $(".customize-title").html("Customize Color - Sole");
+}, 700);
+  $(this).css({backgroundColor:selectcolor}, 200);
+  $( "#select1" ).css({backgroundColor:stcolor}, 200);
+  $( "#select2" ).css({backgroundColor:stcolor}, 200);
+  $( "#select3" ).css({backgroundColor:stcolor}, 200);
+  $( "#select4" ).css({backgroundColor:stcolor}, 200);
 });
 
 </script>

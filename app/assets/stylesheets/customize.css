@@ -1,6 +1,6 @@
 .selector{
   width:40px;
-  background-color:#45faa2;
+  background-color:#468847;
   border-radius:4px;
   height:40px;
   margin-right:20px;
@@ -27,4 +27,7 @@
    left: 35%;
    top: 50%;
    margin: -25px 0 0 -25px;
+}
+body{
+ font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
 }
