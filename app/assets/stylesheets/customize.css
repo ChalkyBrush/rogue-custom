@@ -50,6 +50,9 @@ body{
 }
 
 .customize-elements{
-  background-color:#333333;
-  padding-right:2px;
+  background-color:#eeeeee;
+}
+
+.color-selector{
+  background: url("/assets/swatch/z0.png") no-repeat center center;
 }
