@@ -30,6 +30,7 @@
 }
 body{
  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+ background-color:#999999;
 }
 
 .container{
@@ -41,4 +42,14 @@ body{
 .customize_container{
   border: 2px solid rgba(0,0,0,.5);
   border-radius: 4px;
+  background: url("http://6269-9001.zippykid.netdna-cdn.com/wp-content/uploads/2013/11/White-Wallpapers.jpg") no-repeat center center;
+}
+
+.shoe-preview{
+  
+}
+
+.customize-elements{
+  background-color:#333333;
+  padding-right:2px;
 }
