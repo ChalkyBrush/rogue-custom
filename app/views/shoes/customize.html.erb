@@ -127,12 +127,14 @@ img.src = "myimage.jpg";
 });
 
 $( "#select1" ).click(function() {
+  $(".customize-elements").finish();
+  $(".customize-title").finish();
   selection = 1;
   $(this).css({backgroundColor:selectcolor}, 200);
   $(".customize-elements").fadeOut(800);
   setTimeout(function() {
         $(".customize-title").html("Customize Color - Heel");
-}, 700);
+}, 780);
   $(".customize-elements").delay(200).fadeIn(1000);
 
   $( "#select2" ).css({backgroundColor:stcolor}, 200);
@@ -147,7 +149,7 @@ $( "#select2" ).click(function() {
   $(".customize-elements").delay(200).fadeIn(1000);
   setTimeout(function() {
         $(".customize-title").html("Customize Color - Main");
-}, 700);
+}, 780);
   $(this).css({backgroundColor:selectcolor}, 200);
   $( "#select1" ).css({backgroundColor:stcolor}, 200);
   $( "#select3" ).css({backgroundColor:stcolor}, 200);
@@ -156,12 +158,14 @@ $( "#select2" ).click(function() {
 });
 
 $( "#select3" ).click(function() {
+  $(".customize-elements").finish();
+  $(".customize-title").finish();
   selection = 3;
   $(".customize-elements").fadeOut(800);
   $(".customize-elements").delay(200).fadeIn(1000);
   setTimeout(function() {
         $(".customize-title").html("Customize Color - Front");
-}, 700);
+}, 780);
   $(this).css({backgroundColor:selectcolor}, 200);
   $( "#select1" ).css({backgroundColor:stcolor}, 200);
   $( "#select2" ).css({backgroundColor:stcolor}, 200);
@@ -170,12 +174,14 @@ $( "#select3" ).click(function() {
 });
 
 $( "#select4" ).click(function() {
+  $(".customize-elements").finish();
+  $(".customize-title").finish();
   selection = 4;
   $(".customize-elements").fadeOut(800);
   $(".customize-elements").delay(200).fadeIn(1000);
   setTimeout(function() {
         $(".customize-title").html("Customize Color - Toe");
-}, 700);
+}, 780);
   $(this).css({backgroundColor:selectcolor}, 200);
   $( "#select1" ).css({backgroundColor:stcolor}, 200);
   $( "#select2" ).css({backgroundColor:stcolor}, 200);
@@ -184,12 +190,14 @@ $( "#select4" ).click(function() {
 });
 
 $( "#select5" ).click(function() {
+  $(".customize-elements").finish();
+  $(".customize-title").finish();
   selection = 5;
   $(".customize-elements").fadeOut(800);
   $(".customize-elements").delay(200).fadeIn(1000);
   setTimeout(function() {
         $(".customize-title").html("Customize Color - Sole");
-}, 700);
+}, 780);
   $(this).css({backgroundColor:selectcolor}, 200);
   $( "#select1" ).css({backgroundColor:stcolor}, 200);
   $( "#select2" ).css({backgroundColor:stcolor}, 200);
