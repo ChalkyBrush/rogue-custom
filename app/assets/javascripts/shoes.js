@@ -3,17 +3,16 @@ $(window).load(function(){
   $('#dvLoading').fadeOut(1200);
 });
 
-// $( "#select1" ).click(function() {
-//   selection = 1;
-//   $(this).css({backgroundColor:selectcolor}, 200);
-//   $(".customize-elements").fadeOut(800);
+$("#color1")[0].click(function() {
+Pixastic.revert($("#part"+selection)[0])
+});
 
-//   $(".customize-elements").delay(200).fadeIn(1000).queue(function(n) {
-//         $(".customize-title").html("Customize Color - Heel");
-//         n();
-//   });
-//   $( "#select2" ).css({backgroundColor:stcolor}, 200);
-//   $( "#select3" ).css({backgroundColor:stcolor}, 200);
-//   $( "#select4" ).css({backgroundColor:stcolor}, 200);
-//   $( "#select5" ).css({backgroundColor:stcolor}, 200);
-// });
+$("#color2")[0].click(function() {
+Pixastic.revert($("#part"+selection)[0]);
+Pixastic.process($("#part"+selection)[0], "coloradjust", {red:0.1,green:0.0,blue:0});
+});
+
+$("#color3")[0].click(function() {
+Pixastic.revert($("#part"+selection)[0]);
+Pixastic.process($("#part"+selection)[0], "coloradjust", {red:0.05,green:0.0,blue:0.05});
+});

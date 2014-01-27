@@ -3,3 +3,18 @@
     opacity: 0.5;
     filter: alpha(opacity=50);
 }*/
+
+#color1{
+left:40px;
+top:60px;
+}
+
+#color2{
+left:100px;
+top:60px;
+}
+
+#color3{
+left:160px;
+top:60px;
+}
